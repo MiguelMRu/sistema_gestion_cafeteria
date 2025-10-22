@@ -1,0 +1,16 @@
+header {
+    width: 100%;
+    height: 60px;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+@scope (header) {
+    img {
+        height: 40px;
+        margin-right: 15px;
+        
+    }
+}
