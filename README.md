@@ -1,16 +1,52 @@
-# React + Vite
+# ☕ Sistema de Gestión - Café & Sabor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Una aplicación web moderna para gestionar el menú de productos de tu cafetería artesanal.
 
-Currently, two official plugins are available:
+## 🎯 Sobre el Proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este es un sistema de gestión de productos diseñado para pequeñas cafeterías que quieren digitalizar su negocio. Permite administrar el catálogo completo de productos: cafés, postres, bocadillos y bebidas de forma sencilla e intuitiva.
 
-## React Compiler
+## ✨ Características Principales
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- 📝 **CRUD Completo**: Crear, leer, actualizar y eliminar productos
+- 🔍 **Búsqueda en Tiempo Real**: Encuentra productos al instante mientras escribes
+- 🏷️ **Filtros Inteligentes**: Filtra por categoría y estado de disponibilidad
+- 🎨 **Tema Claro/Oscuro**: Cambia entre temas según tu preferencia
+- 📱 **Diseño Responsivo**: Funciona perfecto en móvil, tablet y desktop
+- ✅ **Validación de Formularios**: Asegura que los datos sean correctos antes de guardar
+- 🔄 **Actualización Dinámica**: Los cambios se reflejan inmediatamente en la interfaz
 
-## Expanding the ESLint configuration
+## 📱 Vistas de la Aplicación
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Dashboard / Lista de Productos
+Vista principal donde se administran todos los productos. Incluye barra de búsqueda, filtros por categoría y disponibilidad, y un grid con tarjetas de productos. Cada producto muestra su imagen, nombre, categoría, precio y estado, con botones para editar o eliminar.
+
+### 2. Detalle del Producto
+Vista pública que muestra información completa de un producto: imagen grande, descripción detallada, precio, ingredientes y productos relacionados de la misma categoría.
+
+### 3. Formulario de Creación/Edición
+Formulario completo con validación en tiempo real para agregar nuevos productos o editar existentes. Incluye campos para nombre, categoría, precio, descripción, imagen, ingredientes y estado de disponibilidad.
+
+## 🛠️ Tecnologías Utilizadas
+
+- **React 18** - Biblioteca principal para la interfaz
+- **React Router v6** - Navegación entre páginas
+- **React Hooks** - useState, useEffect, useContext
+- **MockAPI** - API REST simulada para el backend
+
+## 🎓 Conceptos Practicados
+
+Este proyecto permite practicar conceptos intermedios de React:
+
+- ✅ Hooks esenciales: useState, useEffect, useContext
+- ✅ Enrutamiento con React Router (rutas dinámicas, navegación programática)
+- ✅ Manejo de formularios complejos con validación
+- ✅ Consumo de APIs REST (operaciones CRUD completas)
+- ✅ Gestión de estado global con Context API
+- ✅ Filtrado y búsqueda en tiempo real
+- ✅ Componentes reutilizables
+- ✅ Custom Hooks (useLocalStorage)
+
+---
+
+**Desarrollado como proyecto de práctica para nivel intermedio en React** 🚀
