@@ -4,7 +4,7 @@ export function Dashboard() {
 
   return (
         <>
-          <Header page="Admin" />
+          <Header page="Lista de productos" />
         </>
   )
 }
