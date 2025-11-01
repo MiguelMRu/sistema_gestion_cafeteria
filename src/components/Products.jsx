@@ -1,5 +1,6 @@
 import {getProducts, deleteProduct} from '../services/productService.js';
 import {useEffect, useState} from 'react';
+import '../styles/products.css';
 
 export function Products() {
 
@@ -8,8 +9,7 @@ export function Products() {
 
     useEffect(() => {
         fetchProducts();
-        console.log(products);
-    }, []);
+    }, [products]);
 
     const fetchProducts = async () => {
         try {
@@ -25,7 +25,7 @@ export function Products() {
     const handleDelete = (id) => async () => {
         try {
             await deleteProduct(id);
-            setProducts(products.filter(product => product.id !== id));
+            await fetchProducts();
         } catch (error) {
             console.error('Error deleting product:', error);
         }
@@ -38,9 +38,11 @@ export function Products() {
              : products.map(product => (
                     <article key={product.id} className="product-card">
                         <img src={product.image} alt={product.name} />
-                        <h2>{product.name}</h2>
-                        <p className='product-category'>{product.category}</p>
-                        <p>Precio: {product.price}€</p>
+                        <div className="product-info">
+                            <h2>{product.name}</h2>
+                            <p className='product-category'>{product.category}</p>
+                            <p>Precio: {product.price}€</p>
+                        </div>
                         
                         <button onClick={handleDelete(product.id)}>
                             🗑️ Eliminar

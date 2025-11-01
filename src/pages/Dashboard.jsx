@@ -1,6 +1,6 @@
 import { Header } from "../components/Header"
 import { Products } from "../components/Products"
-export function Dashboard() {
+export default function Dashboard() {
 
 
   return (
