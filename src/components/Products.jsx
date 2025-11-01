@@ -8,6 +8,7 @@ export function Products() {
 
     useEffect(() => {
         fetchProducts();
+        console.log(products);
     }, []);
 
     const fetchProducts = async () => {
@@ -21,28 +22,31 @@ export function Products() {
         }
     }
 
+    const handleDelete = (id) => async () => {
+        try {
+            await deleteProduct(id);
+            setProducts(products.filter(product => product.id !== id));
+        } catch (error) {
+            console.error('Error deleting product:', error);
+        }
+    }
+
     return (
         <section className="products-section">
-            {loading ? (
+            {loading ? 
                 <p>Loading products...</p>
-            ) : (
-                products.map(product => (
-                    <div key={product.id} className="product-card">
+             : products.map(product => (
+                    <article key={product.id} className="product-card">
+                        <img src={product.image} alt={product.name} />
                         <h2>{product.name}</h2>
-                        <p>{product.description}</p>
-                        <p>Price: ${product.price}</p>
-                        <button onClick={async () => {
-                            try {
-                                await deleteProduct(product.id);
-                                setProducts(products.filter(p => p.id !== product.id));
-                            } catch (error) {
-                                console.error('Error deleting product:', error);
-                            }
-                        }}>
-                            Delete
+                        <p className='product-category'>{product.category}</p>
+                        <p>Precio: {product.price}€</p>
+                        
+                        <button onClick={handleDelete(product.id)}>
+                            🗑️ Eliminar
                         </button>
-                    </div>
-                ))
+                    </article>
+                ))}
         </section>
     )
 }
