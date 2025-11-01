@@ -1,9 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-// Importar las páginas (las crearemos después)
 import Dashboard from '../pages/Dashboard';
-import DetalleProducto from '../pages/DetalleProducto';
-import FormularioProducto from '../pages/FormularioProducto';
+import DetalleProducto from '../pages/DetailProduct';
+import FormularioProducto from '../pages/CreateProduct';
 import NotFound from '../pages/NotFound';
 
 /*

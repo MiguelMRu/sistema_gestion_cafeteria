@@ -1,11 +1,11 @@
-import { Dashboard } from './pages/Dashboard'
+import AppRouter from './components/AppRouter'
 import './App.css'
 
 function App() {
 
   return (
     <>
-      <Dashboard />
+      <AppRouter />
     </>
   )
 }
