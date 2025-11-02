@@ -12,6 +12,10 @@
         flex-direction: column;
         align-items: start;
 
+        & a{
+            text-decoration: none;
+            color: inherit;
+        }
 
         & img{
             width: 100%;
@@ -29,6 +33,7 @@
             & h2{
                 margin: 0;
                 font-size: 1.2em;
+                
             }
 
             & .product-category{

@@ -1,5 +1,6 @@
-import {getProducts, deleteProduct} from '../services/productService.js';
+import {getProducts} from '../services/productService.js';
 import {useEffect, useState} from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/products.css';
 
 export function Products() {
@@ -21,7 +22,7 @@ export function Products() {
             setLoading(false);
         }
     }
-
+/*
     const handleDelete = (id) => async () => {
         try {
             await deleteProduct(id);
@@ -30,25 +31,24 @@ export function Products() {
             console.error('Error deleting product:', error);
         }
     }
-
+*/
     return (
-        <section className="products-section">
+        <main className="products-section">
             {loading ? 
                 <p>Loading products...</p>
              : products.map(product => (
                     <article key={product.id} className="product-card">
-                        <img src={product.image} alt={product.name} />
-                        <div className="product-info">
-                            <h2>{product.name}</h2>
-                            <p className='product-category'>{product.category}</p>
-                            <p>Precio: {product.price}€</p>
-                        </div>
-                        
-                        <button onClick={handleDelete(product.id)}>
-                            🗑️ Eliminar
-                        </button>
+
+                        <Link to={`/producto/${product.id}`}>
+                            <img src={product.image} alt={product.name} />
+                            <div className="product-info">
+                                <h2>{product.name}</h2>
+                                <p className='product-category'>{product.category}</p>
+                                <p>Precio: {product.price}€</p>
+                            </div>                            
+                        </Link>
                     </article>
                 ))}
-        </section>
+        </main>
     )
 }
