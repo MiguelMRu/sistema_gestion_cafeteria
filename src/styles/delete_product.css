@@ -1,0 +1,41 @@
+.delete-modal[open] {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 40%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    flex-direction: column;
+    border: none;
+    backdrop-filter: blur(5px);
+    color: white;
+
+
+}
+
+.delete-modal-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.delete-modal button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-modal button:first-child {
+    background-color: red;
+    color: white;
+}
+
+.delete-modal button:last-child {
+    background-color: gray;
+    color: white;
+}
