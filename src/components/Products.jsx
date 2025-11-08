@@ -1,5 +1,5 @@
 import {getProducts} from '../services/productService.js';
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useRef} from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/products.css';
 
@@ -7,6 +7,7 @@ export function Products() {
 
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
         fetchProducts();
@@ -22,16 +23,7 @@ export function Products() {
             setLoading(false);
         }
     }
-/*
-    const handleDelete = (id) => async () => {
-        try {
-            await deleteProduct(id);
-            await fetchProducts();
-        } catch (error) {
-            console.error('Error deleting product:', error);
-        }
-    }
-*/
+
     return (
         <main className="products-section">
             {loading ? 
