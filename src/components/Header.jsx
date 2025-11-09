@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export function Header({ page }) {
 
     const linkPage = page === 'Crear Producto' ? '/' : '/producto/nuevo'
-    const linkName = page === 'Crear Producto' ? 'Volver al Dashboard' : '+ Crear Producto'
+    const linkName = page === 'Crear Producto' ? 'Volver al Dashboard' : '+ Añadir producto'
 
     return(
         <header>
