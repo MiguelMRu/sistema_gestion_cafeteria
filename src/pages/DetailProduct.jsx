@@ -68,8 +68,17 @@ export default function DetailProduct() {
             </ul>
           </div>
 
-          <Link to="/">Volver a la lista de productos</Link>
-          <button className='delete-button' onClick={openDeleteModal}>Eliminar producto</button>
+
+          <div className='product-detail-actions'>
+          <Link to="/">Ver lista de productos</Link>
+
+
+
+          <button className='delete-button' 
+            onClick={openDeleteModal}>
+            Eliminar
+          </button>
+          </div>
 
           <DeleteProduct
             deleteProductRef={deleteProductRef}
