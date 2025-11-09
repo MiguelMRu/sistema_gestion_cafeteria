@@ -11,10 +11,12 @@
     align-items: center;
     z-index: 1000;
     flex-direction: column;
-    border: none;
     backdrop-filter: blur(5px);
     color: white;
-
+    border: 1px solid white;
+    gap: 1.5rem;
+    padding: 1rem;
+    text-wrap: balance;
 
 }
 
