@@ -1,28 +1,12 @@
-import {getProducts} from '../services/productService.js';
-import {useEffect, useState, useRef} from 'react';
 import { Link } from 'react-router-dom';
+import { useProducts } from '../hooks/useProducts.jsx';
 import '../styles/products.css';
 
 export function Products() {
 
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
+  
 
-
-    useEffect(() => {
-        fetchProducts();
-    }, [products]);
-
-    const fetchProducts = async () => {
-        try {
-            const data = await getProducts();
-            setProducts(data);
-        } catch (error) {
-            console.error('Error fetching products:', error);
-        } finally {
-            setLoading(false);
-        }
-    }
+const { products, loading } = useProducts();
 
     return (
         <main className="products-section">
