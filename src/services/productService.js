@@ -11,6 +11,19 @@ export const getProducts = async () => {
   return data
 }
 
+export const getCategories = async () => {
+  const {data, error} = await supabase
+    .from('products')
+    .select('category')
+    .not('category', 'is', null) // Opcional: excluir nulls
+  
+  if (error) throw error
+  
+  // Obtener valores únicos en el cliente
+  const uniqueCategories = [...new Set(data.map(item => item.category))]
+  console.log(uniqueCategories);
+  return uniqueCategories
+}
 // Obtener un producto por ID
 export const getProductById = async (id) => {
   const { data, error } = await supabase
