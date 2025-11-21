@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
-import { useProducts } from '../hooks/useProducts.jsx';
+import { useProductStore } from '../store/useProductStore.js';
 import '../styles/products.css';
 
 export function Products() {
+//Cargar estados del store
+const products = useProductStore((state) => state.products)
+const loading = useProductStore((state) => state.loading)
+const error = useProductStore((state) => state.error)
 
-  
-
-const { products, loading } = useProducts();
 
     return (
         <main className="products-section">
@@ -25,6 +26,7 @@ const { products, loading } = useProducts();
                         </Link>
                     </article>
                 ))}
+                {error && <p>{error}</p>}
         </main>
     )
 }

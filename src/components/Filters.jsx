@@ -1,35 +1,60 @@
 import { FilterSelect } from "./FilterSelect"
 import { useCategories } from "../hooks/useCategories"
-import { useProducts } from "../hooks/useProducts"
+import { useProductStore } from "../store/useProductStore";
+import {useDebounce} from "use-debounce"
+import { useState, useEffect } from "react";
+import "../styles/filters.css"
 
 export function Filters() {
   const categories = useCategories();
-  const { filters, setFilters } = useProducts();
+  const filters = useProductStore((state) => state.filters);
+  const setFilters = useProductStore((state) => state.setFilters);
+
+  const [searchInput, setSearchInput] = useState(filters.search);
+
+  const [debouncedSearch] = useDebounce(searchInput, 300);
+
+     // Cuando el valor debounced cambia, actualizar el filtro global
+  useEffect(() => {
+    setFilters({ ...filters, search: debouncedSearch });
+  }, [debouncedSearch]); // ⚠️ Solo depende de debouncedSearch
+
+
 
   const handleSearchChange = (e) => {
-    setFilters({
-      search: e.target.value
-    });
-  };
+         setSearchInput(e.target.value); // Actualizar estado local
+    };
 
-  const handlefilterChange = (e, type) => {
-    setFilters({
-      [type]: e.target.value
-    });
-  };
+    const handleCategoryChange = (e) => {
+        setFilters({ ...filters, category: e.target.value });
+    };
+
+    const handleAvailabilityChange = (e) => {
+        setFilters({ ...filters, availability: e.target.value });
+    };
 
   return (
-    <nav>
-      <form>
-        <input type="text" placeholder="Buscar productos" onChange={handleSearchChange} />
-        <FilterSelect options={categories} value={filters.category} onChange={e => handlefilterChange(e, 'category')} />
+    <nav className="filters">
+      <form className="filters-form">
+        <input 
+          type="text" 
+          placeholder="Buscar productos"
+          value={searchInput}
+          onChange={handleSearchChange} 
+          />
+        <FilterSelect 
+          options={categories} 
+          value={filters.category} 
+          onChange={handleCategoryChange} 
+          />
+        
         <FilterSelect 
         options={[
                   {value: 'disponible', label: 'Disponible' },
                   { value: 'no_disponible', label: 'No disponible'}
                   ]}
                   value={filters.availability}
-                  onChange={e => handlefilterChange(e, 'availability')}
+                  onChange={handleAvailabilityChange}
         />
 
         
