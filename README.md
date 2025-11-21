@@ -16,6 +16,7 @@ Este es un sistema de gestión de productos diseñado para pequeñas cafeterías
 - ✅ **Validación de Formularios**: Asegura que los datos sean correctos antes de guardar
 - 🔄 **Actualización Dinámica**: Los cambios se reflejan inmediatamente en la interfaz
 
+
 ## 📱 Vistas de la Aplicación
 
 ### 1. Dashboard / Lista de Productos
@@ -29,10 +30,10 @@ Formulario completo con validación en tiempo real para agregar nuevos productos
 
 ## 🛠️ Tecnologías Utilizadas
 
-- **React 18** - Biblioteca principal para la interfaz
-- **React Router v6** - Navegación entre páginas
+- **React 19** - Biblioteca principal para la interfaz
+- **React Router v7** - Navegación entre páginas
 - **React Hooks** - useState, useEffect, useContext
-- **MockAPI** - API REST simulada para el backend
+- **Supabase** - Backend y base de datos en tiempo real
 
 ## 🎓 Conceptos Practicados
 
@@ -41,8 +42,8 @@ Este proyecto permite practicar conceptos intermedios de React:
 - ✅ Hooks esenciales: useState, useEffect, useContext
 - ✅ Enrutamiento con React Router (rutas dinámicas, navegación programática)
 - ✅ Manejo de formularios complejos con validación
-- ✅ Consumo de APIs REST (operaciones CRUD completas)
-- ✅ Gestión de estado global con Context API
+- ✅ Integración con Supabase (Base de datos y API)
+- ✅ Gestión de estado global con Zustand
 - ✅ Filtrado y búsqueda en tiempo real
 - ✅ Componentes reutilizables
 - ✅ Custom Hooks (useLocalStorage)
