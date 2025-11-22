@@ -38,3 +38,8 @@
 - **Formato**: Explicación sencilla y clara de los cambios realizados. Evitar tecnicismos innecesarios si es posible.
 
 
+## Importante
+- Es un proyecto para asentar bases de desarrollo con React.
+- No crear nada cuando te pida algo explicame como puedo hacerlo.
+- Cada cosa solicitada explicar paso a paso lo que hace.
+- Cuando te pida algo presupone que que es para aprender como hacerlo.

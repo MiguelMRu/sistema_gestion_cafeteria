@@ -10,14 +10,14 @@
 
 }
 
-@scope (.detail-product){
-    .product-detail-card{
+@scope (.detail-product) {
+    .product-detail-card {
         display: flex;
         align-items: flex-start;
         gap: 2rem;
         flex-wrap: wrap;
 
-        & img{
+        & img {
             border-radius: 16px;
             height: 100%;
             object-fit: cover;
@@ -25,7 +25,7 @@
 
     }
 
-    .product-detail-info{
+    .product-detail-info {
         display: flex;
         flex-direction: column;
         gap: .5rem;
@@ -37,39 +37,39 @@
             text-wrap: balance;
         }
 
-        
-        & h2{
+
+        & h2 {
             margin-bottom: 0.5rem;
         }
 
-        & .product-detail-category{
+        & .product-detail-category {
             font-style: italic;
             color: gray;
         }
 
-        & .product-detail-price{
+        & .product-detail-price {
             font-weight: bold;
             font-size: 1.2rem;
         }
 
-        & .product-detail-availability.available{
+        & .product-detail-availability.available {
             color: green;
             font-weight: bold;
         }
 
-        & .product-detail-availability.not-available{
+        & .product-detail-availability.not-available {
             color: red;
             font-weight: bold;
         }
 
-        & .product-detail-ingredients{
+        & .product-detail-ingredients {
             list-style-type: none;
             padding: 0;
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
 
-            & li{
+            & li {
                 background-color: #f0f0f0;
                 padding: 0.3rem 0.6rem;
                 border-radius: 12px;
@@ -81,12 +81,12 @@
                 font-weight: bold;
                 padding: 0.5rem 1rem;
                 line-height: 1;
-                
+
             }
         }
     }
 
-    .product-detail-actions{
+    .product-detail-actions {
         display: flex;
         gap: 1rem;
         align-items: center;
@@ -113,12 +113,12 @@
     }
 
 
-    .delete-button{
+    .delete-button {
         align-self: flex-start;
         background-color: #ff4d4d;
         color: white;
         border: none;
-        padding: 0.5rem 1rem;
+        padding: 0.3rem 1rem;
         border-radius: 8px;
         font-weight: bold;
         cursor: pointer;
@@ -128,6 +128,26 @@
         &:hover {
             background-color: #e60000;
         }
+
+
+    }
+
+    .edit-button {
+        align-self: flex-start;
+        color: white;
+        border: none;
+        padding: 0.3rem 1rem;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        height: 45px;
+
+        &:hover {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
     }
 
 }
