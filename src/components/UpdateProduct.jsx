@@ -2,6 +2,7 @@ import { IngredientsInput } from "./IngredientsInput";
 import { updateProduct, getProductById } from '../services/productService'
 import { SelectCategory } from './SelectCategory'
 import { useRef } from 'react'
+import '../styles/update_product.css'
 
 export function UpdateProduct({ product,
     ingredientInput,
@@ -35,16 +36,16 @@ export function UpdateProduct({ product,
 
 
     return (
-        <form className='product-detail-info'
+        <form className='product-detail-info product-update'
             onSubmit={handleSubmit}
             ref={formRef}
         >
-            <input type="text" name="name" defaultValue={product.name} />
-            <SelectCategory name="category" defaultValue={product.category} />
-            <input type="text" name="description" defaultValue={product.description} />
-            <input type="number" step="0.1" name="price" defaultValue={product.price} className='product-detail-price' />
+            <input type="text" name="name" defaultValue={product.name} autoComplete="off" />
+            <SelectCategory name="category" defaultValue={product.category} autoComplete="off" />
+            <textarea type="text" name="description" defaultValue={product.description} autoComplete="off" />
+            <input type="number" step="0.1" name="price" defaultValue={product.price} className='product-detail-price' autoComplete="off" />
             <label htmlFor="available">
-                <input type="checkbox" name="available" defaultChecked={product.available} />
+                <input id="available" type="checkbox" name="available" defaultChecked={product.available} autoComplete="off" />
                 Disponible
             </label>
             <IngredientsInput

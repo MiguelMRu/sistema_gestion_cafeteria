@@ -1,0 +1,61 @@
+@scope(.product-detail-info.product-update) {
+
+    input,
+    select,
+    textarea {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        height: auto;
+        max-width: 80%;
+        padding: 0.5rem;
+
+        @media (max-width: 600px) {
+            max-width: 100%;
+        }
+
+    }
+
+    label {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        line-height: 1;
+    }
+
+    button {
+        border: none;
+        border-radius: 8px;
+        background-color: #4CAF50;
+        color: white;
+        font-weight: bold;
+        padding: 0.3rem 1rem;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1rem;
+        margin: 4px 2px;
+        cursor: pointer;
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media (width >=1080px) {
+            width: 20%;
+            padding: 0.4rem 0.5rem;
+            align-self: flex-end;
+        }
+
+        &:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 600px) {
+            width: 30%;
+            padding: 0.5rem;
+            align-self: center;
+        }
+
+    }
+
+}
