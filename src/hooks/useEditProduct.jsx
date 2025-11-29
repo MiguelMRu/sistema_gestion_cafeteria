@@ -1,4 +1,6 @@
-export function useEditProduct() {
+import { useState } from 'react';
+
+export function useEditProduct({ product, setProduct, ingredientInput, setIngredientInput }) {
 
     const [isEditing, setIsEditing] = useState(false)
     const editName = isEditing ? 'Cancelar' : 'Editar'

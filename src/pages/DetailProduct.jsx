@@ -29,7 +29,7 @@ export default function DetailProduct() {
 
   const { handleDelete, openDeleteModal, closeDeleteModal } = useModal(deleteProductRef)
 
-  const { handleIngredientKeyDown, removeIngredient, handleEdit, editName, isEditing } = useEditProduct()
+  const { handleIngredientKeyDown, removeIngredient, handleEdit, editName, isEditing } = useEditProduct({ product, setProduct, ingredientInput, setIngredientInput })
 
 
 
