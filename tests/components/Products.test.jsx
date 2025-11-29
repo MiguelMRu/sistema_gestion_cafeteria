@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
-import { Products } from './Products';
+import { Products } from '../../src/components/Products';
 import { MemoryRouter } from 'react-router-dom';
-import { useProductStore } from '../store/useProductStore.js';
+import { useProductStore } from '../../src/store/useProductStore.js';
 
-vi.mock('../store/useProductStore.js')
+vi.mock('../../src/store/useProductStore.js')
 
 
 describe('Products', () => {

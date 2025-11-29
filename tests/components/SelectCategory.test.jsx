@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import { SelectCategory } from './SelectCategory';
+import { SelectCategory } from '../../src/components/SelectCategory';
 
 describe('SelectCategory', () => {
     // Test para verificar que el componente se renderiza correctamente

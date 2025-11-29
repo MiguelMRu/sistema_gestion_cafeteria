@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import { IngredientsInput } from './IngredientsInput';
+import { IngredientsInput } from '../../src/components/IngredientsInput';
 import { MemoryRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 import { useState } from 'react';

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Header } from './Header';
+import { Header } from '../../src/components/Header';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, it, expect } from 'vitest';
 
