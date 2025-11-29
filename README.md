@@ -48,7 +48,6 @@ Este proyecto permite practicar conceptos intermedios de React:
 - ✅ Gestión de estado global con Zustand
 - ✅ Filtrado y búsqueda en tiempo real
 - ✅ Componentes reutilizables
-- ✅ Componentes reutilizables
 - ✅ Testing (Unitario e Integración)
 - ✅ Estilos modulares con CSS Modules
 
