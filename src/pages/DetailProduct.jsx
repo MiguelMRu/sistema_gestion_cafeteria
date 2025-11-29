@@ -3,7 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom'
 import { getProductById, deleteProduct } from '../services/productService'
 import { Header } from '../components/Header'
 import { DeleteProduct } from '../components/DeleteProduct'
-import '../styles/detail_product.css'
+import styles from '../styles/detail_product.module.css'
 import { UpdateProduct } from '../components/UpdateProduct'
 import { ProductDetail } from '../components/ProductDetail'
 
@@ -119,9 +119,9 @@ export default function DetailProduct() {
     <>
       <Header page='Detalle del producto' />
 
-      <main className='detail-product'>
+      <main className={styles['detail-product']}>
         {product && (
-          <article key={product.id} className='product-detail-card'>
+          <article key={product.id} className={styles['product-detail-card']}>
 
             <img src={product.image} alt={product.name} />
             {isEditing ? (
@@ -138,16 +138,16 @@ export default function DetailProduct() {
             )}
 
 
-            <div className='product-detail-actions'>
-              <Link to="/">Ver lista de productos</Link>
+            <div className={styles['product-detail-actions']}>
+              <Link to="/" className={styles.link}>Ver lista de productos</Link>
 
 
-              <button className='edit-button'
+              <button className={styles['edit-button']}
                 onClick={handleEdit}>
                 {editName}
               </button>
 
-              <button className='delete-button'
+              <button className={styles['delete-button']}
                 onClick={openDeleteModal}>
                 Eliminar
               </button>

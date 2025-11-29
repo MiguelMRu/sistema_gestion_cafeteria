@@ -1,4 +1,7 @@
-@scope(.product-detail-info.product-update) {
+.product-update {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 
     input,
     select,

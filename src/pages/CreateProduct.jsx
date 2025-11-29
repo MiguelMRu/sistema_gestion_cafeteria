@@ -2,7 +2,7 @@ import { Header } from "../components/Header";
 import { useForm } from "../hooks/useForm";
 import { IngredientsInput } from "../components/IngredientsInput";
 import { SelectCategory } from "../components/SelectCategory";
-import '../styles/create_product.css'
+import styles from '../styles/create_product.module.css'
 
 
 export default function CreateProduct() {
@@ -30,9 +30,9 @@ export default function CreateProduct() {
   return (
     <>
       <Header page="Crear Producto" />
-      <main className="create-product-page">
-        <h1>Crear Producto</h1>
-        <form onSubmit={handleSubmit}>
+      <main className={styles['create-product-page']}>
+        <h1 className={styles.title}>Crear Producto</h1>
+        <form onSubmit={handleSubmit} className={styles.form}>
           <input type="text" name="name" placeholder="Nombre del producto" />
           <SelectCategory />
           <input type="number" step="0.1" name="price" placeholder="Precio del producto" min={0} />
@@ -51,10 +51,10 @@ export default function CreateProduct() {
             onRemove={(index) => setIngredients(ingredients.filter((_, i) => i !== index))}
           />
 
-          <button type="submit" >Crear Producto</button>
+          <button type="submit" className={styles.button}>Crear Producto</button>
         </form>
-        {error && <p className="error-message">{error}</p>}
-        {success && <p className="success-message">{success}</p>}
+        {error && <p className={styles['error-message']}>{error}</p>}
+        {success && <p className={styles['success-message']}>{success}</p>}
       </main>
     </>
   );

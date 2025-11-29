@@ -1,4 +1,4 @@
-import '../styles/ingredient_input.css'
+import styles from '../styles/ingredient_input.module.css'
 
 export function IngredientsInput({
     inputValue,
@@ -18,12 +18,12 @@ export function IngredientsInput({
                 onKeyDown={onKeyDown}
                 placeholder="Escriba un ingrediente y pulse Enter"
             />
-            <div className="ingredients-list">
+            <div className={styles['ingredients-list']}>
                 {ingredients?.map((ingredient, index) => (
-                    <span key={index} className="ingredient-item">
+                    <span key={index} className={styles['ingredient-item']}>
                         {ingredient}
                         <button
-                            className="delete-ingredient"
+                            className={styles['delete-ingredient']}
                             onClick={() => onRemove(index)}
                             type="button"
                         >

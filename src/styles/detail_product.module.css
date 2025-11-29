@@ -1,0 +1,177 @@
+.detail-product {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 2rem;
+    padding: 2rem 0;
+
+    @media (width <=1440px) {
+        max-width: 100%;
+    }
+
+}
+
+.product-detail-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    & img {
+        border-radius: 16px;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+
+}
+
+.product-detail-info {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    max-width: 50%;
+    justify-content: flex-start;
+    text-align: left;
+
+
+    /*media para movil y tablet*/
+    @media (width <=1440px) {
+        max-width: 100%;
+    }
+
+    p {
+        text-wrap: balance;
+    }
+
+
+    & .title {
+        margin-bottom: 0.5rem;
+    }
+
+    & .product-detail-category {
+        font-style: italic;
+        color: gray;
+    }
+
+    & .product-detail-price {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    & .product-detail-availability.available {
+        color: green;
+        font-weight: bold;
+    }
+
+    & .product-detail-availability.not-available {
+        color: red;
+        font-weight: bold;
+    }
+
+    & .product-detail-ingredients {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+
+        & li {
+            background-color: #f0f0f0;
+            padding: 0.3rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            line-height: 1;
+
+        }
+    }
+}
+
+.product-detail-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.link {
+    align-self: flex-start;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #f0f0f0;
+    color: #f0f0f0;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background-color: #333;
+    transition: all 0.3s ease;
+    height: 45px;
+
+    @media (max-width: 768px) {
+        order: 3;
+        height: fit-content;
+        width: 100%;
+    }
+
+    &:hover {
+        background-color: #f0f0f0;
+        color: #333;
+    }
+}
+
+
+.delete-button {
+    align-self: flex-start;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 0.3rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    height: 45px;
+
+    @media (max-width: 768px) {
+        flex: 1;
+    }
+
+    &:hover {
+        background-color: #e60000;
+    }
+
+
+}
+
+.edit-button {
+    align-self: flex-start;
+    color: white;
+    border: none;
+    padding: 0.3rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    height: 45px;
+
+    @media (max-width: 768px) {
+        flex: 1;
+    }
+
+    &:hover {
+        background-color: #f0f0f0;
+        color: #333;
+    }
+
+}

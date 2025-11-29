@@ -1,16 +1,18 @@
+import styles from '../styles/detail_product.module.css'
+
 export function ProductDetail({ product }) {
     const available = product.available ? 'Disponible' : 'No disponible'
     const availableClass = product.available ? 'available' : 'not-available'
 
     return (
-        <div className='product-detail-info'>
-            <h2>{product.name}</h2>
-            <p className='product-detail-category'>{product.category}</p>
+        <div className={styles['product-detail-info']}>
+            <h2 className={styles.title}>{product.name}</h2>
+            <p className={styles['product-detail-category']}>{product.category}</p>
             <p>{product.description}</p>
-            <p className='product-detail-price'>Precio: {product.price}€</p>
-            <p className={`product-detail-availability ${availableClass}`}>{available}</p>
+            <p className={styles['product-detail-price']}>Precio: {product.price}€</p>
+            <p className={`${styles['product-detail-availability']} ${styles[availableClass]}`}>{available}</p>
             <h3>Ingredientes:</h3>
-            <ul className='product-detail-ingredients'>
+            <ul className={styles['product-detail-ingredients']}>
                 {product.ingredients?.map((ingredient, index) => (
                     <li key={index}>{ingredient}</li>
                 ))}

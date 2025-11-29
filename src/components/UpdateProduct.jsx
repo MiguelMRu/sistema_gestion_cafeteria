@@ -2,7 +2,7 @@ import { IngredientsInput } from "./IngredientsInput";
 import { updateProduct, getProductById } from '../services/productService'
 import { SelectCategory } from './SelectCategory'
 import { useRef } from 'react'
-import '../styles/update_product.css'
+import styles from '../styles/update_product.module.css'
 
 export function UpdateProduct({ product,
     ingredientInput,
@@ -36,7 +36,7 @@ export function UpdateProduct({ product,
 
 
     return (
-        <form className='product-detail-info product-update'
+        <form className={styles['product-update']}
             onSubmit={handleSubmit}
             ref={formRef}
         >
