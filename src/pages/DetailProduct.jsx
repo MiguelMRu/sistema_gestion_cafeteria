@@ -6,13 +6,15 @@ import { DeleteProduct } from '../components/DeleteProduct'
 import styles from '../styles/detail_product.module.css'
 import { UpdateProduct } from '../components/UpdateProduct'
 import { ProductDetail } from '../components/ProductDetail'
+import { useModal } from '../hooks/useModal'
+import { useEditProduct } from '../hooks/useEditProduct'
 
 export default function DetailProduct() {
   const { id } = useParams()
   const navigate = useNavigate()
   const [product, setProduct] = useState({})
   const deleteProductRef = useRef(null)
-  const [isEditing, setIsEditing] = useState(false)
+
   const [ingredientInput, setIngredientInput] = useState("");
 
   useEffect(() => {
@@ -25,93 +27,9 @@ export default function DetailProduct() {
     fetchProduct()
   }, [id])
 
-
-  const useModal = (deleteProductRef) => {
-    //Funcion para eliminar producto
-    const handleDelete = (id) => async () => {
-      try {
-        await deleteProduct(id);
-        navigate('/');
-      } catch (error) {
-        console.error('Error deleting product:', error);
-      }
-    }
-
-    //Abrir modal de eliminacion
-    const openDeleteModal = () => {
-      deleteProductRef.current.showModal();
-    }
-
-    //Cerrar modal de eliminacion
-    const closeDeleteModal = () => {
-      deleteProductRef.current.close();
-    }
-
-    return {
-      handleDelete,
-      openDeleteModal,
-      closeDeleteModal
-    }
-
-  }
-
   const { handleDelete, openDeleteModal, closeDeleteModal } = useModal(deleteProductRef)
 
-
-  //Modificar estado de edicion
-  const handleEdit = () => {
-    setIsEditing(!isEditing)
-
-  }
-
-  const editName = isEditing ? 'Cancelar' : 'Editar'
-
-  //Funcion para agregar ingredientes
-  const handleIngredientKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      const values = ingredientInput.trim().split(','); // Separar por comas
-
-      if (ingredientInput.trim() === '') return;
-
-      if (values.length > 1) {
-        // Si hay varios ingredientes separados por comas
-        const newIngredients = [];
-        for (let ingredient of values) {
-          ingredient = ingredient.trim();
-          if (ingredient && !product.ingredients.includes(ingredient)) {
-            newIngredients.push(ingredient);
-          }
-        }
-
-        if (newIngredients.length > 0) {
-          setProduct(prev => ({
-            ...prev,
-            ingredients: [...(prev.ingredients || []), ...newIngredients]
-          }));
-        }
-      } else {
-        // Si es un solo ingrediente
-        const value = values[0];
-        if (!product.ingredients.includes(value)) {
-          setProduct(prev => ({
-            ...prev,
-            ingredients: [...(prev.ingredients || []), value]
-          }));
-        }
-      }
-
-      setIngredientInput("");
-    }
-  };
-
-  //Funcion para eliminar ingredientes
-  const removeIngredient = (indexToRemove) => {
-    setProduct(prev => ({
-      ...prev,
-      ingredients: prev.ingredients.filter((_, index) => index !== indexToRemove)
-    }));
-  };
+  const { handleIngredientKeyDown, removeIngredient, handleEdit, editName, isEditing } = useEditProduct()
 
 
 
