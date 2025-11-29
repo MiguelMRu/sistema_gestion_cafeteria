@@ -11,7 +11,7 @@ Este es un sistema de gestión de productos diseñado para pequeñas cafeterías
 - 📝 **CRUD Completo**: Crear, leer, actualizar y eliminar productos
 - 🔍 **Búsqueda en Tiempo Real**: Encuentra productos al instante mientras escribes
 - 🏷️ **Filtros Inteligentes**: Filtra por categoría y estado de disponibilidad
-- 🎨 **Tema Claro/Oscuro**: Cambia entre temas según tu preferencia
+
 - 📱 **Diseño Responsivo**: Funciona perfecto en móvil, tablet y desktop
 - ✅ **Validación de Formularios**: Asegura que los datos sean correctos antes de guardar
 - 🔄 **Actualización Dinámica**: Los cambios se reflejan inmediatamente en la interfaz
@@ -23,7 +23,7 @@ Este es un sistema de gestión de productos diseñado para pequeñas cafeterías
 Vista principal donde se administran todos los productos. Incluye barra de búsqueda, filtros por categoría y disponibilidad, y un grid con tarjetas de productos. Cada producto muestra su imagen, nombre, categoría, precio y estado, con botones para editar o eliminar.
 
 ### 2. Detalle del Producto
-Vista pública que muestra información completa de un producto: imagen grande, descripción detallada, precio, ingredientes y productos relacionados de la misma categoría.
+Vista pública que muestra información completa de un producto: imagen grande, descripción detallada, precio e ingredientes.
 
 ### 3. Formulario de Creación/Edición
 Formulario completo con validación en tiempo real para agregar nuevos productos o editar existentes. Incluye campos para nombre, categoría, precio, descripción, imagen, ingredientes y estado de disponibilidad.
@@ -34,6 +34,8 @@ Formulario completo con validación en tiempo real para agregar nuevos productos
 - **React Router v7** - Navegación entre páginas
 - **React Hooks** - useState, useEffect, useContext
 - **Supabase** - Backend y base de datos en tiempo real
+- **Vitest & React Testing Library** - Testing unitario y de integración
+- **CSS Modules** - Estilos modulares y scoped
 
 ## 🎓 Conceptos Practicados
 
@@ -46,8 +48,7 @@ Este proyecto permite practicar conceptos intermedios de React:
 - ✅ Gestión de estado global con Zustand
 - ✅ Filtrado y búsqueda en tiempo real
 - ✅ Componentes reutilizables
-- ✅ Custom Hooks (useLocalStorage)
+- ✅ Componentes reutilizables
+- ✅ Testing (Unitario e Integración)
+- ✅ Estilos modulares con CSS Modules
 
----
-
-**Desarrollado como proyecto de práctica para nivel intermedio en React** 🚀
