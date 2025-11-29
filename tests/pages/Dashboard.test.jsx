@@ -50,7 +50,7 @@ describe('Dashboard', () => {
     });
 
     /**
-     * TEST 1: Verificar que el Dashboard se renderiza correctamente
+     *Verificar que el Dashboard se renderiza correctamente
      */
     it('should render Dashboard with all child components', () => {
         render(
@@ -80,7 +80,7 @@ describe('Dashboard', () => {
     });
 
     /**
-     * TEST 3: Verificar que fetchProducts se llama solo una vez
+     * Verificar que fetchProducts se llama solo una vez
      */
     it('should call fetchProducts exactly once on mount', () => {
         render(
