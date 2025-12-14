@@ -18,6 +18,8 @@ export function useEditProduct({ product, setProduct, ingredientInput, setIngred
 
             if (ingredientInput.trim() === '') return;
 
+
+
             if (values.length > 1) {
                 // Si hay varios ingredientes separados por comas
                 const newIngredients = [];
